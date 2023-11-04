@@ -1,0 +1,71 @@
+-- import: fastn
+
+-- import: doc-site/common
+-- import: doc-site
+export: h0,h1,h2,h3
+
+-- import: types
+-- import: cs
+
+-- import: workshop-fastn/FASTN/data
+
+;; ********** Layout **********
+
+-- component layout:
+optional caption title:
+optional body body:
+optional string document-title: $data.site-name
+optional string document-description: $data.site-name
+children wrapper:
+ftd.type-data typography: $types.types
+ftd.color-scheme color-scheme: $cs.main
+
+-- doc-site.page:
+title: $layout.title
+body: $layout.body
+document-title: $layout.document-title
+document-description: $layout.document-description
+document-image:
+site-name: $data.site-name
+site-logo: $data.site-logo
+github-icon: false
+full-width: false
+types: $layout.typography
+colors: $layout.color-scheme
+logo-width: 50
+logo-height: 50
+show-footer: false
+sidebar: false
+show-banner: false
+wrapper: $layout.wrapper
+
+-- end: doc-site.page
+
+-- end: layout
+
+;; --------------------------------------------------------------
+
+;; ********** Button Component **********
+
+-- component button:
+caption title:
+optional boolean isNewTab: true
+optional string link: #
+
+-- ftd.text: $button.title
+role: $inherited.types.label-large
+open-in-new-tab: $button.isNewTab
+link: $button.link
+color: $inherited.color-scheme.cta-primary.text
+background.solid: $inherited.color-scheme.cta-primary.base
+border-color: $inherited.color-scheme.cta-primary.border
+border-width.px: 2
+border-radius.px: 2
+padding-vertical.px: 6
+padding-horizontal.px: 12
+width: fill-container
+text-align: center
+
+-- end: button
+
+;; --------------------------------------------------------------

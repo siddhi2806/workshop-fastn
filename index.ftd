@@ -1,0 +1,58 @@
+-- import: workshop-fastn/FASTN/data
+
+;; -------------------------------------------------------------------------
+;; ***** PORTFOLIO Layout starts *****
+;; -------------------------------------------------------------------------
+
+-- ds.layout:
+
+;; ------------------------------------------
+;; ***** PORTFOLIO Hero UI starts *****
+;; ------------------------------------------
+
+-- ftd.container:
+width: fill-container
+height: fill-container
+padding-bottom.px: 100
+
+-- ds.h0: $data.headline
+body: $data.headline-body
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 10
+margin-vertical.px: 40
+
+-- ds.button: $s.platform-name
+link: $s.profile-link
+isNewTab: true
+$loop$: $data.socials as $s
+
+-- end: ftd.column
+
+;; ------------------------------------------
+;; ***** PORTFOLIO Hero UI ends *****
+;; ------------------------------------------
+
+;; ------------------------------------------
+;; ***** PORTFOLIO Content UI starts *****
+;; ------------------------------------------
+
+-- ftd.column:
+width: fill-container
+
+-- ds.h1: $data.content-title
+body: $data.content-body
+
+-- end: ftd.column
+
+;; ------------------------------------------
+;; ***** PORTFOLIO Content UI ends *****
+;; ------------------------------------------
+
+-- end: ftd.container
+-- end: ds.layout
+
+;; -------------------------------------------------------------------------
+;; ***** PORTFOLIO Layout ends *****
+;; -------------------------------------------------------------------------
